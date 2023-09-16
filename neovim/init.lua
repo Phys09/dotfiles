@@ -95,7 +95,7 @@ require('lazy').setup({
 
   {
       -- Surround Plugin
-      "kylechui/nvim-surround",
+      'kylechui/nvim-surround',
       version = "*", -- Use for stability; omit to use `main` branch for the latest features
       event = "VeryLazy",
       config = function()
@@ -194,6 +194,10 @@ require('lazy').setup({
 	  'nvim-lua/plenary.nvim'
 	  }
     },
+  },
+  {
+	-- Latex Support Via Vimtex
+	'lervag/vimtex'
   },
   {
     -- Highlight, edit, and navigate code
