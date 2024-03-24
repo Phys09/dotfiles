@@ -6,10 +6,25 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- VSCODE CHECKING START --
+-- Disable the following plugins in vscode only
+Not_in_vscode = vim.g.vscode == nil
+-- print("Not_in_vscode variable: ")
+-- print(Not_in_vscode)
+function Load_regular_lazyvim()
+  -- A function that returns a table if we are in vscode, or an empty table otherwise
+  if Not_in_vscode then
+    return { "LazyVim/LazyVim", import = "lazyvim.plugins" }
+  end
+  return {}
+end
+-- VSCODE CHECKING END --
+
 require("lazy").setup({
   spec = {
-    -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- add LazyVim and import its plugins only if we are not in vscode
+    Load_regular_lazyvim(),
+    -- { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
