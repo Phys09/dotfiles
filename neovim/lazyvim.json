@@ -1,9 +1,12 @@
 {
   "extras": [
-
+    "lazyvim.plugins.extras.lang.java",
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.python",
+    "lazyvim.plugins.extras.lang.typescript"
   ],
   "news": {
-    "NEWS.md": "2191"
+    "NEWS.md": "3415"
   },
   "version": 3
 }
