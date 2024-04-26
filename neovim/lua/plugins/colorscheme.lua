@@ -1,13 +1,14 @@
 -- Get another colour scheme
 return {
   -- add monokai
-  { "tanvirtin/monokai.nvim" },
+  { "loctvl842/monokai-pro.nvim"},
+  { "folke/tokyonight.nvim", enabled = false },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai",
+      colorscheme = "monokai-pro",
     },
   },
 }

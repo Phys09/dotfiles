@@ -7,22 +7,15 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
--- Configure after vim startsup
---VimEnter
-local autocmd_show_statusline = function()
-  --[[
-  -- Configure vim, after startup to set laststatus=2 since lualine overrides any user settings
-  --]]
-  vim.api.nvim_create_autocmd("VimEnter", {
-    show_statusline = function()
-      vim.opt.laststatus = 2 -- Statusline on all splits, workaround lualine's hardcoded config
-    end,
-    group = augroup("finalize_config"),
-    callback = function()
-      vim.defer_fn(show_statusline, 5000) -- 5s delay to lower chance plugins race condition the seting
-    end,
-  })
-end
-
--- Perform auto commands now here after having defined them above
-autocmd_show_statusline() -- Set laststatus=2 ideally after plugins are loaded to prevent overriding
+-- Perform operations after neovim starts up
+vim.api.nvim_create_autocmd({ "VimEnter", "BufNew" }, {
+  group = augroup("finalize_config"),
+  callback = function()
+    -- print("Setting status")
+    -- After neovim starts up, execute code in this block
+    vim.defer_fn(function()
+      vim.opt.laststatus = 2
+    end, 2000) -- Delay to lower chance plugins race condition the seting
+    vim.opt.laststatus = 2
+  end,
+})
