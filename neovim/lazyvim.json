@@ -13,10 +13,11 @@
     "lazyvim.plugins.extras.lang.tex",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lang.yaml",
-    "lazyvim.plugins.extras.lsp.none-ls"
+    "lazyvim.plugins.extras.lsp.none-ls",
+    "lazyvim.plugins.extras.ui.alpha"
   ],
   "news": {
-    "NEWS.md": "5114"
+    "NEWS.md": "6077"
   },
-  "version": 5
+  "version": 6
 }
