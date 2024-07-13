@@ -1,15 +1,13 @@
---[[
--- Leave this for later to fix the dashboard
--- Just return nothing for now and use defaults
+-- When pressing 'n' to create a new file, do not start in insert mode
 return {
-  opts = function(_, opts)
-    for i, actions in pairs(opts.config.center) do
-      if actions.key == "n" then
-        actions = { action = "ene",                                                      desc = " New File",        icon = " ", key = "n" }
+  {
+    "nvimdev/dashboard-nvim",
+    opts = function(_, opts)
+      for _, dashboard_actions in pairs(opts.config.center) do
+        if dashboard_actions.key == "n" then
+          dashboard_actions.action = "ene" -- "Edit New Unnamed Buffer do not start insert"
+        end
       end
     end
-  end
+  }
 }
---]]
-
-return {} -- Just fix it in nvim-data instead
