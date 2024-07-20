@@ -1,14 +1,14 @@
 -- Get another colour scheme
 return {
-  -- add monokai
-  { "loctvl842/monokai-pro.nvim"},
-  { "folke/tokyonight.nvim", enabled = false },
+  -- Install/enable other colour schemes here
+  -- eg:
+  -- { "catppuccin/nvim", enabled = true },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load catppuccin-frappe as its colourscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "catppuccin-frappe",
     },
   },
 }

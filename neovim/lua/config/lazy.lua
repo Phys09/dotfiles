@@ -53,7 +53,7 @@ require("lazy").setup({
         -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
-        "tutor",
+        "tutor", -- enable vimtutor if commented out
         "zipPlugin",
       },
     },
