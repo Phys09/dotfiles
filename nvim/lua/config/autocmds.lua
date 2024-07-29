@@ -7,15 +7,19 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
--- Perform operations after neovim starts up
-vim.api.nvim_create_autocmd({ "VimEnter", "BufNew" }, {
-  group = augroup("finalize_config"),
+-- Change indents to 4 spaces for appropriate languages
+vim.api.nvim_create_autocmd({"BufRead"}, {
+  group = augroup("set_four_spaces"),
+  pattern = {
+    "*.java",
+    "*.cs",
+    "*.c",
+    "*.cpp",
+    "*.rs",
+  },
+  desc = "Set indent size (shiftwidth=4) for files such as java, c, etc...",
   callback = function()
-    -- print("Setting status")
-    -- After neovim starts up, execute code in this block
-    vim.defer_fn(function()
-      vim.opt.laststatus = 2
-    end, 2000) -- Delay to lower chance plugins race condition the seting
-    vim.opt.laststatus = 2
+    -- When the file matches, do this
+    vim.opt.shiftwidth = 4 -- 4 space indents
   end,
 })
