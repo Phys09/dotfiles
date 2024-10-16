@@ -1,5 +1,10 @@
 -- Control Vimtex Installation
 return {
   -- Add Vimtex
-  { "lervag/vimtex", enabled = true },
+  -- Mainly for the text objects etc...
+  -- But not the compilation, source it out to watchexec
+  { "lervag/vimtex", lazy = false, enabled = true,
+    opts = function (_, opts)
+    end
+ },
 }
