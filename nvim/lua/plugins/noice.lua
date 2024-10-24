@@ -15,11 +15,19 @@ return {
         "search_up",
       }
 
+      if not opts.cmdline then
+        opts.cmdline = {}
+      end
+
       local new_format = {}
+
+      -- populate new_format
       for _, fmt in pairs(formats) do
         new_format[fmt] = { conceal = false }
       end
-      opts.cmdline = new_format
+
+      opts.cmdline.enabled = true
+      opts.cmdline.format = new_format
     end,
   },
 }
