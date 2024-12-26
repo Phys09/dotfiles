@@ -17,5 +17,3 @@ opt.smartindent = false -- Enable smart indentation.
 opt.shell = "pwsh"
 opt.shellcmdflag = "-NoLogo -noprofile -ExecutionPolicy RemoteSigned -Command"
 opt.shellxquote = ""
-
-vim.diagnostic.config({virtual_text = false}) -- Disable virtual text globally
