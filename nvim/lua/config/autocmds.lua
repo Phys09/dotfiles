@@ -13,8 +13,6 @@ vim.api.nvim_create_autocmd({"BufRead"}, {
   pattern = {
     "*.java",
     "*.cs",
-    "*.c",
-    "*.cpp",
     "*.rs",
   },
   desc = "Set indent size (shiftwidth=4) for files such as java, c, etc...",
