@@ -1,6 +1,6 @@
 CompileFlags:
   # Treat code as C++, use llvm's stdlib
-  Add: [-xc++, -stdlib=libc++, -std=c++23]
+  Add: [-xc++, -std=c++23]
   # Treat code as C++, use C++17 standard, enable more warnings.
   # Add: [-xc++, -std=c++17, -Wall, -Wno-missing-prototypes]
 Diagnostics:
@@ -8,5 +8,5 @@ Diagnostics:
   ClangTidy:
     Add: [performance*, modernize*, readability*]
     Remove: [modernize-use-trailing-return-type]
-    CheckOptions:
-      readability-identifier-naming.VariableCase: CamelCase
+    CheckOptions: {}
+      # readability-identifier-naming.VariableCase: CamelCase

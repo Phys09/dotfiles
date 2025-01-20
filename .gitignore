@@ -1,5 +1,9 @@
-# Allow clangd
-!/clangd
+# First ignore everything
+/*
+# Allow the gitignore file
+!.gitignore
+# Allow clangd config
+!clangd/config.yaml
 
-# Allow nvim
-!/nvim
+# Allow all of nvim
+!nvim/**
