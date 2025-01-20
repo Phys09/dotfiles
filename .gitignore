@@ -1,0 +1,5 @@
+# Allow clangd
+!/clangd
+
+# Allow nvim
+!/nvim
