@@ -4,7 +4,7 @@ return {
   -- eg:
   -- { "catppuccin/nvim", enabled = true },
 
-  -- Configure LazyVim to load catppuccin-frappe as its colourscheme
+  -- Configure LazyVim to load colourscheme
   {
     "LazyVim/LazyVim",
     opts = {
