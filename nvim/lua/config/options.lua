@@ -10,10 +10,16 @@ opt.clipboard = "" -- Do NOT sync with system clipboard
 opt.conceallevel = 0 -- Disable concealing text, always show the text
 opt.laststatus = 2 -- show statusline for everything, not just 1, lualine overrides this to 3
 opt.relativenumber = false -- Disable relative line numbers
-opt.smartindent = false -- Enable smart indentation.
+opt.smartindent = false -- Smart indentation.
 
 -- Enable using pwsh instead of cmd for shell commands
 -- https://github.com/neovim/neovim/issues/13893 and :h shell-powershell for shell related issues
-opt.shell = "pwsh"
-opt.shellcmdflag = "-NoLogo -noprofile -ExecutionPolicy RemoteSigned -Command"
-opt.shellxquote = ""
+opt.shell = "sh"
+-- opt.shellcmdflag = [['-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';$PSStyle.OutputRendering=''plaintext'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;']]
+-- opt.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+-- opt.shellpipe = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
+-- opt.shellxquote = '"'
+
+
+-- Default options for lazyvim pwsh config
+-- LazyVim.terminal.setup("pwsh")

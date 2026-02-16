@@ -1,3 +1,9 @@
+local DISABLE_PLUGIN = true
+
+if DISABLE_PLUGIN then
+  return {}
+end
+
 return {
   {
     "folke/noice.nvim",
