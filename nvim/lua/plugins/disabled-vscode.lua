@@ -20,5 +20,5 @@ return {
   { "stevearc/conform.nvim", enabled = false },
   -- !!! DISABLE ALL LSP STUFF !!! --
   -- Nvim's LSP is not needed when using vscode
-  { "williamboman/mason.nvim", enabled = false },
+  { "mason-org/mason.nvim", enabled = false },
 }
