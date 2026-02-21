@@ -1,12 +1,7 @@
-local DISABLE_PLUGIN = true
-
-if DISABLE_PLUGIN then
-  return {}
-end
-
 return {
   {
     "folke/noice.nvim",
+    enabled = false,
     event = "VeryLazy",
     opts = function(_, opts)
       -- remove concealing the text when typing the commands in commandline
