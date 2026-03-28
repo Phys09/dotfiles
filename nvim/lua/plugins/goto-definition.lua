@@ -3,6 +3,10 @@
 --  'require("omnisharp_extended").telescope_lsp_definitions()'
 --  will require telescope to function. This decouples telescope reliance.
 --]]
+local INCLUDE = false
+if not INCLUDE then
+  return {}
+end
 return {
   "neovim/nvim-lspconfig",
   opts = function(_, opts)
