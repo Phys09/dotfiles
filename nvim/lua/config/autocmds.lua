@@ -7,17 +7,17 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
--- Change indents to 4 spaces for appropriate languages
-vim.api.nvim_create_autocmd({"BufRead"}, {
-  group = augroup("set_four_spaces"),
-  pattern = {
-    "*.java",
-    "*.cs",
-    "*.rs",
-  },
-  desc = "Set indent size (shiftwidth=4) for files such as java, c, etc...",
-  callback = function()
-    -- When the file matches, do this
-    vim.opt.shiftwidth = 4 -- 4 space indents
-  end,
-})
+-- -- Change indents to 4 spaces for appropriate languages
+-- vim.api.nvim_create_autocmd({"BufRead"}, {
+--   group = augroup("set_four_spaces"),
+--   pattern = {
+--     "*.java",
+--     "*.cs",
+--     "*.rs",
+--   },
+--   desc = "Set indent size (shiftwidth=4) for files such as java, c, etc...",
+--   callback = function()
+--     -- When the file matches, do this
+--     vim.opt.shiftwidth = 4 -- 4 space indents
+--   end,
+-- })
