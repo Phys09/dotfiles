@@ -1,6 +1,6 @@
 CompileFlags:
   # Treat code as C++, use c++23 standard
-  Add: [-xc++, -std=c++23]
+  Add: [-xc++, -std=c++26]
   # Treat code as C++, use C++17 standard, enable more warnings.
   # Add: [-xc++, -std=c++17, -Wall, -Wno-missing-prototypes]
 Diagnostics:
